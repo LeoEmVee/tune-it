@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AudioContext from './utils/audio-context';
 import autoCorrelate from './utils/auto-correlation-function';
 import soundAnalyzer from './utils/sound-values';
+import StartStop from './components/StartStop';
 
 const audioCtx = AudioContext.getAudioContext();
 const analyser = AudioContext.getAnalyser();
@@ -9,6 +10,8 @@ const bufferLength = 2048;
 const buffer = new Float32Array(bufferLength);
 
 const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
+// Make an object from so many states.
 
 function App () {
   const [source, setSource] = useState(null);
@@ -58,6 +61,10 @@ function App () {
     setStart(false);
   };
 
+  const startStop = () => {
+    return started ? stopRec(): startRec();
+  };
+
   const getSound = () => {
     return navigator.mediaDevices.getUserMedia({
       audio: {
@@ -82,12 +89,7 @@ function App () {
         </div>
         <div className='detune'> detune: {soundAnalyzer.getDetune(detune)}%</div>
         <div className='pitch'>{pitch} Hz</div>
-        
-        {!started ? (
-          <button onClick={startRec}>Start</button>
-        ) : (
-          <button onClick={stopRec}>Stop</button>
-        )}
+        <StartStop started={started} onClick={startStop}></StartStop>
       </div>
     </div>
   );
