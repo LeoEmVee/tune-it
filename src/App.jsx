@@ -3,6 +3,7 @@ import AudioContext from './utils/audio-context';
 import autoCorrelate from './utils/auto-correlation-function';
 import soundAnalyzer from './utils/sound-values';
 import StartStop from './components/StartStop';
+import Tuner from './components/Tuner';
 
 const audioCtx = AudioContext.getAudioContext();
 const analyser = AudioContext.getAnalyser();
@@ -10,8 +11,6 @@ const bufferLength = 2048;
 const buffer = new Float32Array(bufferLength);
 
 const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
-
-// Make an object from so many states.
 
 function App () {
   const [source, setSource] = useState(null);
@@ -31,7 +30,7 @@ function App () {
       let scale = Math.floor(midiNote / 12) - 1;
       let detune = soundAnalyzer.getOutOfPitch(ac, midiNote);
       
-      setPitch(parseFloat(ac).toFixed(2) + ' Hz');
+      setPitch(parseFloat(ac).toFixed(2));
       setPitchNote(noteSymbol);
       setPitchScale(scale);
       setDetune(detune);
@@ -62,7 +61,7 @@ function App () {
   };
 
   const startStop = () => {
-    return started ? stopRec(): startRec();
+    return started ? stopRec() : startRec();
   };
 
   const getSound = () => {
@@ -75,22 +74,11 @@ function App () {
       },
     });
   };
-
+  
   return (
-    <div className='tuner'>
-      <div>TUNE-IT</div>
-      <div className='makeNoise'>
-        {makeNoise ? 'Make some noooise...' : null}
-      </div>
-      <div className='details'>
-        <div className='notedetails'>
-          <span>{pitchNote}</span>
-          <span>{pitchScale}</span>
-        </div>
-        <div className='detune'> detune: {soundAnalyzer.getDetune(detune)}%</div>
-        <div className='pitch'>{pitch} Hz</div>
-        <StartStop started={started} onClick={startStop}></StartStop>
-      </div>
+    <div className='display'>
+      <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={soundAnalyzer.getDetune(detune)}></Tuner>
+      <StartStop started={started} onClick={startStop}></StartStop>
     </div>
   );
 }
