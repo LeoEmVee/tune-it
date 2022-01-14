@@ -1,6 +1,7 @@
-function getNote (freq) {
+function getMidiNote (freq) {
   const noteNum = 12 * (Math.log(freq / 440) / Math.log(2));
-  return Math.round(noteNum) + 69;
+  const midiNote = Math.round(noteNum) + 69;
+  return midiNote;
 }
 
 function getFrequency (note) {
@@ -16,7 +17,7 @@ function getDetune (detune) {
 }
 
 const soundAnalyzer = {
-  getNote,
+  getMidiNote,
   getOutOfPitch,
   getDetune
 };
