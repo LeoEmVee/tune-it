@@ -69,7 +69,7 @@ function App () {
       audio: {
         echoCancellation: true,
         autoGainControl: false,
-        noiseSuppression: true,
+        noiseSuppression: false,
         latency: 0,
       },
     });
@@ -77,7 +77,7 @@ function App () {
   
   return (
     <div className='display'>
-      <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={soundAnalyzer.getDetune(detune)}></Tuner>
+      <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune}></Tuner>
       <StartStop started={started} onClick={startStop}></StartStop>
     </div>
   );
