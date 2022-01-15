@@ -19,18 +19,50 @@ function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch}) {
           <div className='pitch'>{pitch} Hz</div>
         </div>
       </div>
-      <ReactSpeedometer
-        maxValue={50}
-        minValue={-50}
-        value={detune}
-        currentValueText={`${pitchNote}`}
-        needleColor="red"
-        startColor="green"
-        segments={50}
-        maxSegmentLabels={4}
-        endColor="blue"
-        textColor="grey">
-      </ReactSpeedometer>
+      <div className='meter'>
+        <ReactSpeedometer
+          ringWidth={80}
+          width={600}
+          maxValue={50}
+          minValue={-50}
+          needleHeightRatio={0.7}
+          value={detune}
+          currentValueText={`${pitchNote}`}
+          needleColor="darkred"
+          needleTransition='ease'
+          needleTransitionDuration={1000}
+          segmentColors={['red', 'gold', '#138808', 'gold', 'red']}
+          segments={5}
+          maxSegmentLabels={8}
+          textColor="lightgrey"
+          customSegmentLabels={[
+            {
+              text: 'Not even close',
+              position: 'INSIDE',
+              fontSize: '50%'
+            },
+            {
+              text: 'Just a bit more tuning',
+              position: 'INSIDE',
+              fontSize: '50%'
+            },
+            {
+              text: 'Just a bit more tuning',
+              position: 'INSIDE',
+              fontSize: '50%'
+            },
+            {
+              text: 'Just a bit more tuning',
+              position: 'INSIDE',
+              fontSize: '50%'
+            },
+            {
+              text: 'Just a bit more tuning',
+              position: 'INSIDE',
+              fontSize: '50%'
+            }]}>
+        </ReactSpeedometer>
+      </div>
     </div>
   );
 }
