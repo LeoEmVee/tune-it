@@ -1,5 +1,6 @@
 import React from 'react';
 import PercentMeter from './PercentMeter';
+import NeedleMeter from './NeedleMeter';
 
 function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch}) {
   return (
@@ -20,6 +21,7 @@ function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch}) {
       </div>
       <div className='meter'>
         <PercentMeter detune={detune}></PercentMeter>
+        <NeedleMeter detune={detune} pitchNote={pitchNote} pitchScale={pitchScale}></NeedleMeter>
       </div>
     </div>
   );

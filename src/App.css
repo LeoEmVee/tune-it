@@ -8,8 +8,9 @@ body {
 }
 .logo {
   font-family: 'Chlorinar', 'Roboto Black';
-  font-size: 150%;
+  font-size: 200%;
   font-weight: bolder;
+  color: lightgray;
 }
 
 .details {
@@ -59,8 +60,8 @@ body {
   width: 90%;
   background-color: #FFF;
   font-family: 'Roboto Black';
-  border: 1px solid black;
-  border-radius: 2%;
+  border: 0.2em solid black;
+  border-radius: 0.5em;
 }
 
 .startStop {

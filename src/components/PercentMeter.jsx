@@ -5,15 +5,25 @@ function PercentMeter ({ detune }) {
   const meterSize = {
     height: 200,
   };
-  const arcColor = () => detune < 10 && detune > -10 ? ['green'] : ['red'];
+  const arcColor = () => {
+    if (detune < 7 && detune > -7) {
+      return ['green'];
+    }
+    if (detune < 30 && detune > -30) {
+      return ['green', 'red', 'red', 'red', 'green'];
+    }
+    return ['red'];
+    
+  };
   return (
     <div className='PercentMeter'>
       <GaugeChart id="gauge-chart2"
         style={meterSize}
-        nrOfLevels={1}
+        nrOfLevels={5}
         percent={detune / 100 || 0}
         textColor='black'
         marginInPercent={0.02}
+        arcWidth={0.3}
         needleBaseColor='#FFFFFFFF'
         needleColor='#FFFFFFFF'
         colors={arcColor()}
