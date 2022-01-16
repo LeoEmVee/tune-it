@@ -29,14 +29,15 @@ body {
   font-family: 'Roboto';
   margin-top: 5%;
   background-color: #BA4A00;
-  padding: 2%;
+  padding: 1.5%;
   position: relative;
   width: 45%;
-  height: 23em;
+  height: 27em;
   color: white;
   position: center;
   border: 5px solid black;
   border-radius: 2%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .tuner {
@@ -64,23 +65,45 @@ body {
   border-radius: 0.5em;
 }
 
-.startStop {
+.controls {
   display: flex;
   justify-content: center;
-  padding: 1%;
-  margin: auto;
   margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+
+button {
+  padding: 1%;
   width: 20%;
-  height: 20%;
+  height: 90%;
   font-weight: bolder;
   font-family: 'Roboto';
   font-size: 100%;
+  margin: auto;
   background-color: rgb(44, 44, 44);
   color: white;
   border: 1px solid black;
   border-radius: 0.5em;
+  box-shadow: 0.1em 0.1em #997;
 }
 
-.noMessage {
- color: rgb(44, 44, 44); 
+button:hover {
+  background-color: rgb(65, 62, 62);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(0.1em) translateX(0.1em);
+}
+
+.noise {
+  font-family: 'Chlorinar', 'Roboto Black';
+  font-size: 120%;
+}
+
+.noNoise {
+  font-family: 'Chlorinar', 'Roboto Black';
+  font-size: 120%;
+  color: rgb(44, 44, 44);
+  
 }

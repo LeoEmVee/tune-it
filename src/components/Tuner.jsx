@@ -2,7 +2,7 @@ import React from 'react';
 import PercentMeter from './PercentMeter';
 import NeedleMeter from './NeedleMeter';
 
-function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch}) {
+function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch, meter}) {
   return (
     <div className='tuner'>
       <header className='logo'>
@@ -16,12 +16,12 @@ function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch}) {
         <div>
           <div className='detune' detune={detune}> detune: {detune} %</div>
           <div className='pitch'>{pitch} Hz</div>
-          <div className='makeNoise'>{makeNoise ? 'Make some noooise...' : <div className='noMessage'>|</div>}</div>
+          <div className='message'>{makeNoise ? <div className='noise'>Make some noooise...</div> : <div className='noNoise'>No noise</div>}</div>
         </div>
       </div>
       <div className='meter'>
-        <PercentMeter detune={detune}></PercentMeter>
-        <NeedleMeter detune={detune} pitchNote={pitchNote} pitchScale={pitchScale}></NeedleMeter>
+        {meter === 'needle' ? <NeedleMeter detune={detune} pitchNote={pitchNote} pitchScale={pitchScale}></NeedleMeter> : <PercentMeter detune={detune}></PercentMeter>
+        }
       </div>
     </div>
   );

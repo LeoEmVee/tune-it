@@ -4,6 +4,7 @@ import autoCorrelate from './utils/auto-correlation-function';
 import soundAnalyzer from './utils/sound-values';
 import StartStop from './components/StartStop';
 import Tuner from './components/Tuner';
+import SelectMeter from './components/SelectMeter';
 
 const audioCtx = AudioContext.getAudioContext();
 const analyser = AudioContext.getAnalyser();
@@ -20,6 +21,7 @@ function App () {
   const [pitch, setPitch] = useState('-');
   const [detune, setDetune] = useState('0');
   const [makeNoise, setMakeNoise] = useState(false);
+  const [meter, setMeter] = useState('percent');
 
   const updatePitch = () => {
     analyser.getFloatTimeDomainData(buffer);
@@ -78,11 +80,18 @@ function App () {
       },
     });
   };
+
+  const switchMeter = () => {
+    return meter === 'percent' ? setMeter('needle') : setMeter('percent');
+  };
   
   return (
     <div className='panel'>
-      <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune}></Tuner>
-      <StartStop started={started} onClick={startStop}></StartStop>
+      <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune} meter={meter}></Tuner>
+      <div className='controls'>
+        <StartStop started={started} onClick={startStop}></StartStop>
+        <SelectMeter meter={meter} onClick={switchMeter}></SelectMeter>
+      </div>
     </div>
   );
 }

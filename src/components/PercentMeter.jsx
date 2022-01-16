@@ -9,7 +9,7 @@ function PercentMeter ({ detune }) {
     if (detune < 7 && detune > -7) {
       return ['green'];
     }
-    if (detune < 30 && detune > -30) {
+    if (detune < 33 && detune > -33) {
       return ['green', 'red', 'red', 'red', 'green'];
     }
     return ['red'];
