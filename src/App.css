@@ -3,6 +3,21 @@ body {
   
 }
 
+.panel {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5%;
+  background-color: rgb(104, 20, 20);
+  padding: 3%;
+  position: relative;
+  width: 40%;
+  color: white;
+  position: center;
+  border: 10px;
+  border-color: black;
+}
+
 .tuner {
   background-color: black;
   color: white;
@@ -10,4 +25,13 @@ body {
 
 .meter {
   background-color: rgb(72, 72, 72);
+}
+
+.startStop {
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-family: 'Arial Black';
+  color: red;
+  background-color: grey;
 }

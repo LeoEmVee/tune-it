@@ -15,8 +15,8 @@ const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 function App () {
   const [source, setSource] = useState(null);
   const [started, setStart] = useState(false);
-  const [pitchNote, setPitchNote] = useState('pitch note // ');
-  const [pitchScale, setPitchScale] = useState('scale');
+  const [pitchNote, setPitchNote] = useState('');
+  const [pitchScale, setPitchScale] = useState('');
   const [pitch, setPitch] = useState('0');
   const [detune, setDetune] = useState('0');
   const [makeNoise, setMakeNoise] = useState(false);
@@ -76,7 +76,7 @@ function App () {
   };
   
   return (
-    <div className='display'>
+    <div className='panel'>
       <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune}></Tuner>
       <StartStop started={started} onClick={startStop}></StartStop>
     </div>
