@@ -57,6 +57,7 @@ function App () {
 
   const stopRec = () => {
     source.disconnect(analyser);
+    setDetune('0');
     setStart(false);
   };
 

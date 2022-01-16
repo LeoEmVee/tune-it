@@ -28,6 +28,7 @@ function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch}) {
         />
         <ReactSpeedometer
           ringWidth={50}
+          width={200}
           maxValue={50}
           minValue={-50}
           needleHeightRatio={0.8}
