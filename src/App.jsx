@@ -15,9 +15,9 @@ const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 function App () {
   const [source, setSource] = useState(null);
   const [started, setStart] = useState(false);
-  const [pitchNote, setPitchNote] = useState('');
-  const [pitchScale, setPitchScale] = useState('');
-  const [pitch, setPitch] = useState('0');
+  const [pitchNote, setPitchNote] = useState('-');
+  const [pitchScale, setPitchScale] = useState('-');
+  const [pitch, setPitch] = useState('-');
   const [detune, setDetune] = useState('0');
   const [makeNoise, setMakeNoise] = useState(false);
 
@@ -57,8 +57,11 @@ function App () {
 
   const stopRec = () => {
     source.disconnect(analyser);
-    setDetune('0');
     setStart(false);
+    setPitchNote('-');
+    setPitchScale('-');
+    setDetune('0');
+    setPitch('-');
   };
 
   const startStop = () => {
