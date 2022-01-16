@@ -16,7 +16,7 @@ function PercentMeter ({ detune }) {
     
   };
   return (
-    <div className='PercentMeter'>
+    <div className='percentMeter'>
       <GaugeChart id="gauge-chart2"
         style={meterSize}
         nrOfLevels={5}

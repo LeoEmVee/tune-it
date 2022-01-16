@@ -8,7 +8,7 @@ body {
 }
 .logo {
   font-family: 'Chlorinar', 'Roboto Black';
-  font-size: 200%;
+  font-size: 250%;
   font-weight: bolder;
   color: lightgray;
 }
@@ -37,7 +37,12 @@ body {
   position: center;
   border: 5px solid black;
   border-radius: 2%;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .tuner {
@@ -63,6 +68,20 @@ body {
   font-family: 'Roboto Black';
   border: 0.2em solid black;
   border-radius: 0.5em;
+}
+
+.noteMeter {
+  position:static;
+  margin: auto;
+  width: 60%;
+  padding: 2.5em;
+  font-family: 'Wallpoet', 'Roboto Black';
+  background-color: black;
+  border-radius: 0.5em;
+}
+
+.noteChar {
+  font-size: 500%;
 }
 
 .controls {
@@ -105,5 +124,4 @@ button:active {
   font-family: 'Chlorinar', 'Roboto Black';
   font-size: 120%;
   color: rgb(44, 44, 44);
-  
 }

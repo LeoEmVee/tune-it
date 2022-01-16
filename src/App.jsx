@@ -82,7 +82,9 @@ function App () {
   };
 
   const switchMeter = () => {
-    return meter === 'percent' ? setMeter('needle') : setMeter('percent');
+    if (meter === 'percent') return setMeter('needle');
+    if (meter === 'needle') return setMeter('note');
+    if (meter === 'note') return setMeter('percent');
   };
   
   return (
