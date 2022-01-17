@@ -99,7 +99,7 @@ button {
   font-family: 'Roboto';
   font-size: 100%;
   margin: auto;
-  background-color: rgb(44, 44, 44);
+  background-color: rgb(44, 44, 200);
   color: #A9A9A9;
   border: 1px solid black;
   border-radius: 0.5em;
@@ -113,6 +113,34 @@ button:hover {
 button:active {
   box-shadow: none;
   transform: translateY(0.1em) translateX(0.1em);
+}
+
+.stdFreqSel {
+  display: flex;
+  padding: 1%;
+  width: 30%;
+  height: 90%;
+  font-weight: bolder;
+  font-family: 'Roboto';
+  font-size: 100%;
+  margin: auto;
+  background-color: rgb(44, 44, 44);
+  color: #A9A9A9;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  box-shadow: 0.1em 0.1em #A9A9A9;
+}
+
+.rangeInput {
+  display: flex;
+  margin: auto;
+  width: 50%;
+}
+
+.manInput {
+  display: flex;
+  margin: auto;
+  width: 25%;
 }
 
 .noise {
