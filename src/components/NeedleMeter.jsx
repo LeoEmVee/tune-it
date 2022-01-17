@@ -15,7 +15,7 @@ function NeedleMeter ({ detune, pitchNote, pitchScale, started }) {
     <div className='needleMeter'>
       <ReactSpeedometer
         ringWidth={30}
-        width={300}
+        width={275}
         maxValue={50}
         minValue={-50}
         needleHeightRatio={0.8}
