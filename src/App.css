@@ -7,7 +7,22 @@
 body {
   font-family: 'Roboto Black', sans-serif;
 }
+
+.navbar {
+  display: flex;
+  background-color: rgb(44, 44, 44);
+  color: white;
+  height: 7em;
+  box-shadow: 0 0.1em rgb(112, 43, 43);
+}
+
+.navlogo {
+  padding: 1%;
+  padding-left: 1%;
+}
+
 .logo {
+  margin: auto;
   font-family: 'Chlorinar', 'Roboto Black';
   font-size: 270%;
   font-weight: bolder;
