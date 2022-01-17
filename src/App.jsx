@@ -23,6 +23,7 @@ function App () {
   const [detune, setDetune] = useState('0');
   const [makeNoise, setMakeNoise] = useState(false);
   const [meter, setMeter] = useState('percent');
+  const [refFreq, setRefFreq] = useState(400);
   
   const updatePitch = () => {
     analyser.getFloatTimeDomainData(buffer);
@@ -81,6 +82,24 @@ function App () {
       },
     });
   };
+  
+  const handleSliderChange = (event, newValue) => {
+    setRefFreq(newValue);
+  };
+
+  const handleInputChange = (event) => {
+    setRefFreq(event.target.value === '' ? '' : Number(event.target.value));
+  };
+
+  const handleBlur = () => {
+    if (refFreq < 400) {
+      setRefFreq(400);
+      window.alert('Tune frequency must be between 400 and 509 (Hz)');
+    } else if (refFreq > 509) {
+      setRefFreq(509);
+      window.alert('Tune frequency must be between 400 and 509 (Hz)');
+    }
+  };
 
   const switchMeter = () => {
     if (meter === 'percent') return setMeter('needle');
@@ -93,7 +112,7 @@ function App () {
       <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune} meter={meter} started={started}></Tuner>
       <div className='controls'>
         <StartStop started={started} onClick={startStop}></StartStop>
-        <SelectStdFreq></SelectStdFreq>
+        <SelectStdFreq refFreq={refFreq} rangeChange={handleSliderChange, handleInputChange} inputChange={handleInputChange} onBlur={handleBlur}></SelectStdFreq>
         <SelectMeter meter={meter} onClick={switchMeter}></SelectMeter>
       </div>
     </div>

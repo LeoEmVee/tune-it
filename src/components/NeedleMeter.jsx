@@ -3,7 +3,6 @@ import ReactSpeedometer from 'react-d3-speedometer';
 
 function NeedleMeter ({ detune, pitchNote, pitchScale, started }) {
   const arcColor = () => {
-    console.log(detune);
     if (detune < 7 && detune > -7) {
       return ['green'];
     } else if (detune < 33 && detune > -33) {
@@ -33,7 +32,6 @@ function NeedleMeter ({ detune, pitchNote, pitchScale, started }) {
         paddingHorizontal={10}
         paddingVertical={10}>
       </ReactSpeedometer>
-
     </div>
   );
 }

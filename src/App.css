@@ -60,7 +60,7 @@ body {
 .meter {
   display: flex;
   justify-content: center;
-  padding: 2%;
+  padding: 3%;
   margin: auto;
   height: 60%;
   width: 90%;
