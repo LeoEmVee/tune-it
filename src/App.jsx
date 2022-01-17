@@ -90,7 +90,7 @@ function App () {
   
   return (
     <div className='panel'>
-      <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune} meter={meter}></Tuner>
+      <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune} meter={meter} started={started}></Tuner>
       <div className='controls'>
         <StartStop started={started} onClick={startStop}></StartStop>
         <SelectStdFreq></SelectStdFreq>

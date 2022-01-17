@@ -3,7 +3,7 @@ import PercentMeter from './PercentMeter';
 import NeedleMeter from './NeedleMeter';
 import NoteMeter from './NoteMeter';
 
-function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch, meter}) {
+function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch, meter, started}) {
   return (
     <div className='tuner'>
       <header className='logo'>
@@ -22,7 +22,7 @@ function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch, meter}) {
       </div>
       <div className='meter'>
         {
-          meter === 'percent' ? <PercentMeter detune={detune}></PercentMeter> : meter === 'needle' ? <NeedleMeter detune={detune} pitchNote={pitchNote} pitchScale={pitchScale}></NeedleMeter> : <NoteMeter pitchNote={pitchNote}></NoteMeter>
+          meter === 'percent' ? <PercentMeter detune={detune}></PercentMeter> : meter === 'needle' ? <NeedleMeter started={started} detune={detune} pitchNote={pitchNote} pitchScale={pitchScale}></NeedleMeter> : <NoteMeter pitchNote={pitchNote}></NoteMeter>
         }
       </div>
     </div>
