@@ -114,7 +114,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(65, 62, 62);
+  background-color: rgb(131, 50, 50);
 }
 
 button:active {
@@ -138,9 +138,14 @@ button:active {
   box-shadow: 0.03em 0.2em rgb(131, 50, 50);
 }
 
+.stdFreqSel:hover {
+  background-color: rgb(131, 50, 50);
+}
+
 .rangeInput {
   display: flex;
   margin: auto;
+  color: #000;
   width: 50%;
 }
 
