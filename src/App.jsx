@@ -11,7 +11,6 @@ const audioCtx = AudioContext.getAudioContext();
 const analyser = AudioContext.getAnalyser();
 const bufferLength = 2048;
 const buffer = new Float32Array(bufferLength);
-
 const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
 function App () {
@@ -23,16 +22,16 @@ function App () {
   const [detune, setDetune] = useState('0');
   const [makeNoise, setMakeNoise] = useState(false);
   const [meter, setMeter] = useState('percent');
-  const [refFreq, setRefFreq] = useState(400);
+  const [refFreq, setRefFreq] = useState(440);
   
   const updatePitch = () => {
     analyser.getFloatTimeDomainData(buffer);
     const ac = autoCorrelate(buffer, audioCtx.sampleRate);
     if (ac > -1) {
-      let midiNote = soundAnalyzer.getMidiNote(ac);
+      let midiNote = soundAnalyzer.getMidiNote(refFreq, ac);
       let noteSymbol = notes[midiNote % 12];
       let scale = Math.floor(midiNote / 12) - 1;
-      let detune = soundAnalyzer.getOutOfPitch(ac, midiNote);
+      let detune = soundAnalyzer.getOutOfPitch(refFreq, ac, midiNote);
       
       setPitch(parseFloat(ac).toFixed(2));
       setPitchNote(noteSymbol);
@@ -88,7 +87,7 @@ function App () {
   };
 
   const handleInputChange = (event) => {
-    setRefFreq(event.target.value === '' ? '' : Number(event.target.value));
+    setRefFreq(event.target.value === 0 ? 0 : event.target.value);
   };
 
   const handleBlur = () => {

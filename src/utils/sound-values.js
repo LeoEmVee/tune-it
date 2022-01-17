@@ -1,15 +1,15 @@
-function getMidiNote (freq) {
-  const noteNum = 12 * (Math.log(freq / 440) / Math.log(2));
+function getMidiNote (refFreq, freq) {
+  const noteNum = 12 * (Math.log(freq / refFreq) / Math.log(2));
   const midiNote = Math.round(noteNum) + 69;
   return midiNote;
 }
 
-function getFrequency (note) {
-  return 440 * Math.pow(2, (note - 69) / 12);
+function getFrequency (refFreq, note) {
+  return refFreq * Math.pow(2, (note - 69) / 12);
 }
 
-function getOutOfPitch (freq, note) {
-  return Math.floor((1200 * Math.log(freq / getFrequency(note))) / Math.log(2));
+function getOutOfPitch (refFreq, freq, note) {
+  return Math.floor((1200 * Math.log(freq / getFrequency(refFreq, note))) / Math.log(2));
 
 }
 function getDetune (detune) {

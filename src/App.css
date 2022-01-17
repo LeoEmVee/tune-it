@@ -9,7 +9,7 @@ body {
 }
 .logo {
   font-family: 'Chlorinar', 'Roboto Black';
-  font-size: 250%;
+  font-size: 270%;
   font-weight: bolder;
   color: lightgray;
 }
@@ -33,7 +33,7 @@ body {
   padding: 1.5%;
   position: relative;
   width: 45%;
-  height: 27em;
+  height: 30em;
   position: center;
   border: 5px solid rgba(0, 0, 0, 0.323);
   border-radius: 2%;
@@ -60,7 +60,7 @@ body {
 .meter {
   display: flex;
   justify-content: center;
-  padding: 3%;
+  padding: 5%;
   margin: auto;
   height: 60%;
   width: 90%;
@@ -71,9 +71,12 @@ body {
 }
 
 .noteMeter {
-  position:static;
+  display: flex;
+  justify-content: center;
   margin: auto;
-  width: 60%;
+  width: 80%;
+  height: 120%;
+  margin: auto;
   padding: 2.5em;
   font-family: 'Wallpoet', 'Roboto Black';
   background-color: black;
