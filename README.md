@@ -8,8 +8,8 @@ A simple online instrument tuner
 
 # Hot to use
 
-- Press `start` button on the right to activate the mic and begin tuning. Press `stop` button to stop the audio recording.
-- Press the button on the left to toggle between different meter views (percent, needle and note character).
+- Press `start` button on the left to activate the mic and begin tuning. Press `stop` button to stop the audio recording.
+- Press the button on the right to toggle between different meter views (percent, needle and note character).
 
 # Thanks to
 
