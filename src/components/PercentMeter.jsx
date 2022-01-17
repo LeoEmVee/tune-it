@@ -24,8 +24,8 @@ function PercentMeter ({ detune }) {
         textColor='black'
         marginInPercent={0.02}
         arcWidth={0.3}
-        needleBaseColor='#FFFFFFFF'
-        needleColor='#FFFFFFFF'
+        needleBaseColor='lightgray'
+        needleColor='lightgray'
         colors={arcColor()}
         formatTextValue={detune => detune + '%'}
       />

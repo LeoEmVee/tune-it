@@ -18,7 +18,7 @@ function NeedleMeter ({ detune, pitchNote, pitchScale }) {
         width={250}
         maxValue={50}
         minValue={-50}
-        needleHeightRatio={0.8}
+        needleHeightRatio={0.7}
         value={detune}
         currentValueText={`${pitchNote} - ${pitchScale}`}
         needleColor="black"
