@@ -3,7 +3,7 @@ import GaugeChart from 'react-gauge-chart';
 
 function PercentMeter ({ detune }) {
   const meterSize = {
-    height: 200,
+    height: 195,
   };
   const arcColor = () => {
     if (detune < 7 && detune > -7) return ['green'];

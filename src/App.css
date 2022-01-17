@@ -42,21 +42,17 @@ body {
   flex-direction: column;
   margin: auto;
   font-family: 'Roboto';
-  margin-top: 5%;
+  margin-top: 3%;
   background-color: #000;
   padding: 1.5%;
+  padding-bottom: 0%;
   position: relative;
   width: 45%;
   height: 30em;
   position: center;
   border: 5px solid rgba(0, 0, 0, 0.323);
   border-radius: 2%;
-  box-shadow:
-    rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: 0.3em 0.3em rgb(44, 44, 44);
 }
 
 .tuner {
@@ -90,7 +86,7 @@ body {
   flex-direction: column;
   margin: auto;
   width: 80%;
-  height: 120%;
+  height: 95%;
   margin: auto;
   padding: 2.5em;
   font-family: 'Wallpoet', 'Roboto Black';

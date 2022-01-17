@@ -13,7 +13,8 @@ function NeedleMeter ({ detune, pitchNote, pitchScale, started }) {
     <div className='needleMeter'>
       <ReactSpeedometer
         ringWidth={30}
-        width={275}
+        width={200}
+        height={100}
         maxValue={50}
         minValue={-50}
         needleHeightRatio={0.8}
@@ -26,9 +27,7 @@ function NeedleMeter ({ detune, pitchNote, pitchScale, started }) {
         segments={7}
         segmentColors={arcColor()}
         maxSegmentLabels={4}
-        labelFontSize='10'
-        paddingHorizontal={10}
-        paddingVertical={10}>
+        labelFontSize='10'>
       </ReactSpeedometer>
     </div>
   );
