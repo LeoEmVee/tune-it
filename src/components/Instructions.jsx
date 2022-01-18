@@ -14,9 +14,9 @@ function Instructions () {
         - Press the button on the right bottom to toggle between different meter views (percent, needle and note character).<br/><br/>
         
         Thanks to:<br/><br/>
-          <a href='https://github.com/cwilso'>Chris Wilson</a> for <a href='https://github.com/cwilso/PitchDetect'>PitchDetect</a><br/>
-        
-          <a href='https://github.com/Martin36'>Martin36</a> for <a href='https://github.com/Martin36/react-gauge-chart'>react-gauge-chart</a>
+          <a href='https://github.com/cwilso' target='_blank' rel="noreferrer">Chris Wilson</a>, for <a href='https://github.com/cwilso/PitchDetect' target='_blank' rel="noreferrer">PitchDetect</a><br/>
+          <a href='https://github.com/Martin36' target='_blank' rel="noreferrer">Martin36</a>, for <a href='https://github.com/Martin36/react-gauge-chart' target='_blank' rel="noreferrer">react-gauge-chart</a><br/>
+          <a href='https://github.com/adriamcassorla' target='_blank' rel="noreferrer">Adrià M. Cassorla</a>, for his technical (and invaluable) support.
         </p>
       </div>
     </div>
