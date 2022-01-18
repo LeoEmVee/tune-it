@@ -75,6 +75,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 3%;
+  padding-top: 1%;
   margin: auto;
   height: 40%;
   width: 90%;
@@ -89,8 +90,8 @@ body {
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  width: 80%;
-  height: 95%;
+  width: 55%;
+  height: 100%;
   margin: auto;
   padding: 2.5em;
   font-family: 'Wallpoet', 'Roboto Black';
@@ -101,6 +102,12 @@ body {
 
 .noteChar {
   font-size: 500%;
+}
+
+.meterNote {
+  color: black;
+  font-family: 'Wallpoet', 'Roboto Black';
+  font-weight: bolder;
 }
 
 .controls {

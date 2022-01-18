@@ -1,9 +1,9 @@
 import React from 'react';
 import GaugeChart from 'react-gauge-chart';
 
-function PercentMeter ({ detune }) {
+function PercentMeter ({ detune, pitchNote, pitchScale }) {
   const meterSize = {
-    height: 195,
+    height: 200,
   };
   const arcColor = () => {
     if (detune < 7 && detune > -7) return ['green'];
@@ -11,9 +11,18 @@ function PercentMeter ({ detune }) {
     if (detune < 33 && detune > -33) return ['green', 'red', 'red', 'red', 'red', 'red', 'green'];
     return ['red'];
   };
+
+  const tuned = {color: 'green'};
+  const green = {color: 'darkgreen'};
+  const darkred = {color: 'darkred'};
+  const red = {color: 'red'};
   
   return (
     <div className='percentMeter'>
+      <div className='meterNote' style={
+        detune > -7 && detune < 7 ? tuned :
+          detune > -14 && detune < 14 ? green :
+            detune > -33 && detune < 33 ? darkred : red}>{pitchNote} {pitchScale}</div>
       <GaugeChart id="gauge-chart1"
         style={meterSize}
         marginInPercent={0.02}

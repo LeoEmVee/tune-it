@@ -20,7 +20,7 @@ function Tuner ({makeNoise, pitchNote, pitchScale, detune, pitch, meter, started
         </div>
         <div className='meter'>
           {
-            meter === 'percent' ? <PercentMeter detune={detune}></PercentMeter> : meter === 'needle' ? <NeedleMeter started={started} detune={detune} pitchNote={pitchNote} pitchScale={pitchScale}></NeedleMeter> : <NoteMeter pitchNote={pitchNote} detune={detune}></NoteMeter>
+            meter === 'percent' ? <PercentMeter detune={detune} pitchNote={pitchNote} pitchScale={pitchScale}></PercentMeter> : meter === 'needle' ? <NeedleMeter started={started} detune={detune} pitchNote={pitchNote} pitchScale={pitchScale}></NeedleMeter> : <NoteMeter pitchNote={pitchNote} detune={detune}></NoteMeter>
           }
         </div>
       </div>
