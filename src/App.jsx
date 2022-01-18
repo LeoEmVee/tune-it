@@ -41,7 +41,6 @@ function App () {
       setPitchScale(scale);
       setDetune(detune);
       setMakeNoise(false);
-      console.log(midiNote, noteSymbol, scale, detune, ac);
     }
   };
 
@@ -49,10 +48,9 @@ function App () {
     if (source != null) source.connect(analyser);
   }, [source]);
 
-  setInterval(updatePitch, 100);
-
   const startRec = async () => {
     const input = await getSound();
+    setInterval(updatePitch, 100);
 
     if (audioCtx.state === 'suspended') await audioCtx.resume();
     setStart(true);
@@ -63,11 +61,11 @@ function App () {
 
   const stopRec = () => {
     source.disconnect(analyser);
-    setStart(false);
     setPitchNote('-');
     setPitchScale('-');
     setDetune('0');
     setPitch('-');
+    setStart(false);
   };
 
   const startStop = () => {
@@ -79,7 +77,7 @@ function App () {
       audio: {
         echoCancellation: true,
         autoGainControl: false,
-        noiseSuppression: false,
+        noiseSuppression: true,
         latency: 0,
       },
     });

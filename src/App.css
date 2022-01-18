@@ -15,10 +15,15 @@ body {
   box-shadow: 0 0.03em rgb(112, 43, 43);
 }
 
+.navbar a {
+  text-decoration: none;
+}
+
 .navlogo {
   font-family: 'Chlorinar', 'Roboto Black';
   font-weight: bolder;
   color: lightgray;
+  padding-left: 2%;
 }
 
 .logo {
