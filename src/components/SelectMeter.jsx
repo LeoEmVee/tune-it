@@ -8,7 +8,7 @@ function SelectMeter ({ meter, onClick }) {
   };
   
   return (
-    <button className='selectMeter' onClick={onClick}>
+    <button className='ctrlBtn' onClick={onClick}>
       {toggleButton()}
     </button>
   );

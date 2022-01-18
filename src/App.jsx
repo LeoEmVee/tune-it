@@ -7,6 +7,8 @@ import Tuner from './components/Tuner';
 import SelectMeter from './components/SelectMeter';
 import SelectStdFreq from './components/SelectStdFreq';
 import NavBar from './components/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
 
 const audioCtx = AudioContext.getAudioContext();
 const analyser = AudioContext.getAnalyser();
@@ -112,11 +114,11 @@ function App () {
       <NavBar></NavBar>
       <div className='panel'>
         <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune} meter={meter} started={started}></Tuner>
-        <div className='controls'>
+        <Container className='controls'>
           <StartStop started={started} onClick={startStop}></StartStop>
           <SelectStdFreq refFreq={refFreq} rangeChange={handleSliderChange, handleInputChange} inputChange={handleInputChange} onBlur={handleBlur}></SelectStdFreq>
           <SelectMeter meter={meter} onClick={switchMeter}></SelectMeter>
-        </div>
+        </Container>
       </div>
     </>
   );
