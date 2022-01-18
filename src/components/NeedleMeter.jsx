@@ -2,30 +2,28 @@ import React from 'react';
 import ReactSpeedometer from 'react-d3-speedometer';
 
 function NeedleMeter ({ detune, pitchNote, pitchScale, started }) {
-  const arcColor = () => {
+  const arcColor = (detune) => {
     if (detune < 7 && detune > -7) return ['green'];
-    if (detune < 14 && detune > -14) return ['green', 'green', 'red', 'red', 'red', 'green', 'green'];
-    if (detune < 33 && detune > -33) return ['green', 'red', 'red', 'red', 'red', 'red', 'green'];
     return ['red'];
   };
-
+  
   return (
     <div className='needleMeter'>
       <ReactSpeedometer
-        ringWidth={30}
+        ringWidth={10}
         width={200}
-        height={100}
+        height={200}
         maxValue={50}
         minValue={-50}
-        needleHeightRatio={0.8}
+        needleHeightRatio={1}
         value={detune}
         currentValueText={`${pitchNote} - ${pitchScale}`}
-        needleColor="black"
-        textColor="black"
+        needleColor={arcColor(detune)}
+        textColor={arcColor(detune)}
         needleTransition='easeBounceIn'
         needleTransitionDuration={started ? 3000 : 1}
         segments={7}
-        segmentColors={arcColor()}
+        segmentColors={['black']}
         maxSegmentLabels={4}
         labelFontSize='10'>
       </ReactSpeedometer>

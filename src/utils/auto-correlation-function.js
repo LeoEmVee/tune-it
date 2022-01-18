@@ -8,7 +8,7 @@ export default function autoCorrelate (buffer, sampleRate) {
 
   rms = Math.sqrt(rms / size);
   
-  if (rms < 0.01) return -1;
+  if (rms < 0.001) return -1;
 
   let r1 = 0, r2 = size - 1, threshold = 0.2;
   

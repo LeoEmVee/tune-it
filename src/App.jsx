@@ -49,7 +49,7 @@ function App () {
     if (source != null) source.connect(analyser);
   }, [source]);
 
-  setInterval(updatePitch, 1);
+  setInterval(updatePitch, 100);
 
   const startRec = async () => {
     const input = await getSound();
