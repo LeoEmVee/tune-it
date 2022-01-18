@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AudioContext from './utils/audio-context';
 import autoCorrelate from './utils/auto-correlation-function';
 import soundAnalyzer from './utils/sound-values';
-import StartStop from './components/StartStop';
-import Tuner from './components/Tuner';
-import SelectMeter from './components/SelectMeter';
-import SelectStdFreq from './components/SelectStdFreq';
-import NavBar from './components/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
+import Instructions from './components/Instructions';
+import TuningPanel from './components/TuningPanel';
+
 
 const audioCtx = AudioContext.getAudioContext();
 const analyser = AudioContext.getAnalyser();
@@ -109,15 +107,14 @@ function App () {
   
   return (
     <>
-      <NavBar></NavBar>
-      <div className='panel'>
-        <Tuner makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune} meter={meter} started={started}></Tuner>
-        <Container className='controls'>
-          <StartStop started={started} onClick={startStop}></StartStop>
-          <SelectStdFreq refFreq={refFreq} rangeChange={handleSliderChange, handleInputChange} inputChange={handleInputChange} onBlur={handleBlur}></SelectStdFreq>
-          <SelectMeter meter={meter} onClick={switchMeter}></SelectMeter>
-        </Container>
-      </div>
+      <nav className='navbar'>
+        <Link to="/" className='logo navlogo'>TUNE-IT!</Link>
+        <Link to="/instructions" className='instructions navlogo'>Instructions</Link>
+      </nav>
+      <Routes>
+        <Route path='/' element={<TuningPanel makeNoise={makeNoise} pitchNote={pitchNote} pitchScale={pitchScale} pitch={pitch} detune={detune} meter={meter} started={started} refFreq={refFreq} handleSliderChange={handleSliderChange} handleInputChange={handleInputChange} handleBlur={handleBlur} switchMeter={switchMeter} startStop={startStop}/>}></Route>
+        <Route path='instructions' element={<Instructions></Instructions>}></Route>
+      </Routes>
     </>
   );
 }
