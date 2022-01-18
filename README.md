@@ -14,5 +14,4 @@ A simple online instrument tuner
 # Thanks to
 
 - [Chris Wilson](https://github.com/cwilso), for [PitchDetect](https://github.com/cwilso/PitchDetect)
-- [Arun Kumar](https://github.com/palerdot), for [react-d3-speedometer](https://github.com/palerdot/react-d3-speedometer)
 - [Martin36](https://github.com/Martin36), for [react-gauge-chart](https://github.com/Martin36/react-gauge-chart)

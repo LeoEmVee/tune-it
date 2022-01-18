@@ -1,32 +1,42 @@
 import React from 'react';
-import ReactSpeedometer from 'react-d3-speedometer';
+import GaugeChart from 'react-gauge-chart';
 
-function NeedleMeter ({ detune, pitchNote, pitchScale, started }) {
-  const arcColor = (detune) => {
+function NeedleMeter ({ detune, started, pitchNote }) {
+  const meterSize = {
+    height: 195,
+  };
+  const arcColor = () => {
     if (detune < 7 && detune > -7) return 'green';
-    return 'red';
+    if (detune < 14 && detune > -14) return 'darkgreen';
+    if (detune < 33 && detune > -33) return '#666600';
+    return 'darkred';
+  };
+  
+  const percent = (detune) => {
+    if (started) return detune / 100 >= 0 ? 0.5 + detune / 100 : 0.5 + detune / 100;
+    else return 0.5;
   };
   
   return (
     <div className='needleMeter'>
-      <ReactSpeedometer
-        ringWidth={10}
-        width={200}
-        height={200}
-        maxValue={50}
-        minValue={-50}
-        needleHeightRatio={1}
-        value={Number(detune)}
-        currentValueText={`${pitchNote} - ${pitchScale}`}
-        needleColor={arcColor(detune)}
-        textColor={arcColor(detune)}
-        needleTransition='linear'
-        needleTransitionDuration={started ? 3000 : 1}
-        segments={7}
-        segmentColors={['black']}
-        maxSegmentLabels={4}
-        labelFontSize='10'>
-      </ReactSpeedometer>
+      <GaugeChart id="gauge-chart2"
+        style={meterSize}
+        marginInPercent={0.05}
+        cornerRadius={10}
+        nrOfLevels={50}
+        percent={percent(detune)}
+        arcPadding={0}
+        arcWidth={0.1}
+        colors={[arcColor()]}
+        textColor={arcColor()}
+        needleColor={arcColor()}
+        needleBaseColor={arcColor()}
+        hideText={false}
+        animate={true}
+        animDelay={1}
+        animateDuration={100}
+        formatTextValue={() => pitchNote}
+      />
     </div>
   );
 }

@@ -14,16 +14,22 @@ function PercentMeter ({ detune }) {
   
   return (
     <div className='percentMeter'>
-      <GaugeChart id="gauge-chart2"
+      <GaugeChart id="gauge-chart1"
         style={meterSize}
+        marginInPercent={0.02}
+        cornerRadius={6}
         nrOfLevels={7}
         percent={detune / 100 || 0}
-        textColor='black'
-        marginInPercent={0.02}
+        arcPadding={0.05}
         arcWidth={0.3}
-        needleBaseColor='rgb(242, 242, 242)'
-        needleColor='rgb(242, 242, 242)'
         colors={arcColor()}
+        textColor='black'
+        needleColor='rgb(242, 242, 242)'
+        needleBaseColor='rgb(242, 242, 242)'
+        hideText={false}
+        animate={false}
+        animDelay={500}
+        animateDuration={3000}
         formatTextValue={(detune) => detune + '%'}
       />
     </div>
