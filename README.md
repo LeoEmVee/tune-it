@@ -2,7 +2,7 @@
 
 A very simple online instrument tuner
 
-![Foto1](C:\Users\Propietario\Desktop\Foto1.PNG)
+![Foto1](Foto1.PNG)
 
 # Getting started
 
