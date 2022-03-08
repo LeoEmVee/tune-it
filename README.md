@@ -4,7 +4,11 @@ A very simple online instrument tuner
 
 ![Foto1](Foto1.PNG)
 
-# Getting started
+# Online demo
+
+https://tune-it-leoemvee.vercel.app/
+
+# To run locally
 
 - `npm i`
 - `npm start`
